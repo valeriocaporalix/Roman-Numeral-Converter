@@ -3,7 +3,7 @@ import ConvertToRoman from '../utility/Converter';
 
 const ConverterForm = () => {
   const [decimal, setDecimal] = useState('');
-  const [roman, setRoman] = useState();
+  const [roman, setRoman] = useState('');
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -11,19 +11,23 @@ const ConverterForm = () => {
   };
 
   return (
-    <section>
+    <section className="converter-section">
+      <hr />
       <form onSubmit={submitHandler}>
+        <label>Decimal Number</label>
         <input
           value={decimal}
           placeholder="Insert Decimal Number"
           onChange={(event) => setDecimal(event.target.value)}
+          maxLength={4}
         />
         <button type="submit">Submit</button>
       </form>
-      <div>
-        <h3>Result:</h3>
-        <h4>{roman}</h4>
+      <div className="result">
+        <label>Result:</label>
+        <h2>{roman !== '' ? roman : '...'}</h2>
       </div>
+      <hr />
     </section>
   );
 };
