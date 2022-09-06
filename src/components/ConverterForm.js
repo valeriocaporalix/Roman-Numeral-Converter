@@ -12,7 +12,7 @@ const ConverterForm = () => {
 
   return (
     <section className="converter-section">
-      <hr />
+      <hr className="hr-top" />
       <form onSubmit={submitHandler}>
         <label>Decimal Number</label>
         <input
@@ -24,10 +24,10 @@ const ConverterForm = () => {
         <button type="submit">Submit</button>
       </form>
       <div className="result">
-        <label>Result:</label>
+        <label>Result</label>
         <h2>{roman !== '' ? roman : '...'}</h2>
       </div>
-      <hr />
+      <hr className="hr-bottom" />
     </section>
   );
 };
